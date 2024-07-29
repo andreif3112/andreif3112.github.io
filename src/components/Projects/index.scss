@@ -1,0 +1,197 @@
+.projects-container {
+    //background-color: green; // yellow
+    width: 100vw;
+    min-height: 80vh; // to see section underline in navbar
+    //justify-content: center; // don't position directly in middle, hard to read
+    align-items: center; // align cross axis
+
+    &.dark-mode {
+        background-color: var(--bg-dark);
+    }
+    &.light-mode {
+        background-color: var(--bg-light);
+    }
+    
+}
+
+.projects-content {
+    //background-color: red;
+    margin-top: 10%; // instead of justify-content in parent element/class, give a margin.
+    padding-bottom: 1rem; // so we can see shadow
+    width: 80%;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    // for h2
+    &.dark-mode {
+        color: var(--text-dark);
+    }
+    &.light-mode {
+        color: var(--text-light);
+    }
+}
+
+
+// span
+.projects-content .img-text {
+    display: flex; // for row direction default
+    gap: 1rem;
+}
+
+.projects-content h1 {
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+.projects-content a h2 {
+    font-size: 1.6rem;
+    font-weight: 500;
+}
+
+.projects-content h1, .projects-content h2 {
+    text-align: center;
+}
+
+
+// anchor element
+.tile {
+     //background-color: yellow;
+    max-width: 70%;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid;
+    border-radius: 20px;
+    padding: 0 1rem 1rem;
+    position: relative; // for projects link
+    text-decoration: none;
+
+    transition: 0.3s; // for hover
+
+    & span img {
+        filter: blur(2px); 
+        border-radius: 20px;
+        transition: 0.3s; // for hover
+    }
+
+    &.dark-mode {
+        border-color: var(--bg-text-grey);
+    }
+    &.light-mode {
+        border-color: var(--hover-light);
+    }
+    .projects-link-icon {
+        transition: 0.3s; // for hover
+    }
+    .projects-link-icon.dark-mode {
+        color: var(--text-dark);
+    }
+    .projects-link-icon.light-mode {
+        color: var(--text-light);
+    }
+
+    &:hover {
+        & span img {
+            filter: blur(0.5px);
+        }
+    }
+
+    &.dark-mode:hover {
+        border-color: var(--text-dark) ;
+
+        .projects-link-icon {
+            color: var(--text-dark);
+        }
+    }
+    &.light-mode:hover {
+        border-color: var(--text-light) ;
+
+        .projects-link-icon {
+            color: var(--text-light);
+        }
+    }
+
+    // light up h2 & p
+    &.dark-mode {
+        color: var(--text-dark);
+    }
+    &.light-mode {
+        color: var(--text-light);
+    }
+}
+
+.tile img {
+    filter: blur(2px);
+    width: 50%;
+}
+
+.tile p {
+    //background-color: yellowgreen;
+    padding: 0 1rem 2rem 1rem;
+    width: 50%;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.tile .projects-link {
+    text-decoration: underline;
+    position: absolute;
+    right: 3%;
+    bottom: 3%;
+}
+
+
+
+
+@media (max-width: 1024px) {
+    .projects-content .img-text {
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+        // background-color: yellow;
+        //padding: 0;
+    }
+    .tile img, .tile p {
+        width: 100%;
+    }
+    .tile img {
+        filter: blur(1px);
+    }
+    .tile .projects-link-icon.dark-mode {
+        color: var(--text-dark);
+    }
+    .tile .projects-link-icon.light-mode {
+        color: var(--text-light);
+    }
+}
+
+@media (min-width: 2560px) {
+    .projects-content h1 {
+        font-size: 4rem;
+    }
+
+    .projects-content a h2 {
+        font-size: 2.5rem;
+    }
+
+    .projects-content a p {
+        font-size: 2rem;
+    }
+
+    .projects-content a img {
+        filter: blur(5px);
+    }
+
+    .projects-content .tile {
+        border: 4px solid;
+
+        & .projects-link {
+            font-size: 2.3rem;
+        }
+    }
+
+    .projects-content {
+        padding-bottom: 20rem;
+    }
+}

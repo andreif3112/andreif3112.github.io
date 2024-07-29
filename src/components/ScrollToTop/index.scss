@@ -1,0 +1,37 @@
+.scrollTop {
+    cursor: pointer;
+    position: fixed;
+    bottom: 5vh;
+    right: 5vw;
+    //transform: scale(2);
+    // color: white;
+    //background-color: purple;
+    border-radius: 20px;
+    stroke-width: -100;
+    width: 2rem;
+    height: 4rem;
+    padding: 5px;
+    z-index: 3;
+}
+
+.scrollTop.dark-mode {
+    color: var(--text-dark);
+}
+.scrollTop.light-mode {
+    color: var(--text-light);
+}
+
+
+.scrollTop.dark-mode:hover {
+    background-color: var(--dark-hover);
+}
+.scrollTop.light-mode:hover {
+    background-color: var(--hover-light-2);
+}
+
+@media (min-width: 2560px) {
+    .scrollTop {
+        width: 3rem;
+        height: 6rem;
+    }
+}

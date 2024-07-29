@@ -1,0 +1,95 @@
+footer {
+    //background-color: red;
+    height: 20vh;
+    display: flex;
+    // centers .footer-content
+    align-items: center;
+    justify-content: center;
+}
+.footerColor {
+    //background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(20px);
+    z-index: 2; // so it can blur
+    transition: background-color 0.5s;
+    &.light-mode {
+        background-color: rgba(var(--bg-light-rgb), 0.5);
+    }
+}
+
+
+.footer-content {
+    //background-color: cadetblue;
+    width: 60%;
+    height: inherit;
+    display: flex;
+    flex-direction: column;
+    align-items: center; // center cross axis
+    justify-content: center;
+    gap: 1rem;
+}
+.footer-content h2 {
+    //background-color: purple;
+    color: var(--text-dark);
+    margin: 0;
+    font-size: 2rem;
+    font-weight: 400;
+    text-align: center;
+}
+.footer-content ul {
+    //background-color: yellow;
+    width: 60%;
+    margin: 0;
+    display: flex;
+    padding: 0; // removes space to the left of the Github icon
+    justify-content: space-evenly;
+    list-style: none;
+    font-size: 2rem; // icon size
+}
+
+.footer-content ul li {
+    //background-color: orange;
+    //padding: 1rem 1rem 1rem 1rem;
+    a {
+        cursor: pointer;
+        display: flex;
+        justify-content: center; // justifies text -- aligns horiztonally
+        color: var(--text-dark); // changes LuMail icon color already + content/data-hover color
+
+        &:hover {
+            svg {
+                opacity: 0; // remove icon
+                transition: all 0.3s ease-out;
+            }
+
+            &:after {
+                font-size: 20px;
+                font-weight: 500;
+                position: absolute; 
+                transform: translate(0%, 10%); // justifies text -- aligns it vertically
+                content: attr(data-hover); /* work around to have content different for each svg icon */
+            }
+        }
+    }
+}   
+
+
+@media (max-width: 1024px) {
+    .footer-content {
+        width: 60%;
+    }
+    .footer-content h2 {
+        font-size: 1.2rem;
+    }
+
+    .footer-content ul {
+        width: 100%; // width of .footer-content
+        justify-content: space-between;
+    }
+}
+
+@media (min-width: 2560px) {
+    .footer-content h2, .footer-content ul {
+        font-size: 3rem;
+    } 
+
+}

@@ -1,0 +1,213 @@
+.home-container {
+    // background: radial-gradient(10% 80% at center top, cyan, black);
+    //background-color: purple;
+    width: 100vw;
+    height: 110vh; // take into account nav bar + arrow down
+    justify-content: center; // can justify-content
+    align-items: center;
+    z-index: 0;
+}
+
+.home-container.light-mode {
+    background-color: var(--bg-light);
+}
+
+.home-container.dark-mode {
+    background-color: var(--bg-dark);
+}
+
+.home-content {
+    //background-color: blue;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 60%;
+    //height:  80%;
+    // z-index: 0;
+}
+
+.home-content h1 {
+    box-sizing: border-box;
+    //background-color: maroon; // cyan
+
+    width: 80%;
+    height: 20%;
+    margin-top: 15%;
+    font-size:  4rem;
+    font-weight: 350;
+    animation: fadeInDown 3s;
+    //color: white;
+    // padding: 0;
+}
+
+.home-content h1.dark-mode {
+    color: var(--text-dark);
+}
+
+.home-content h1.light-mode {
+    color: var(--text-light);
+}
+
+
+
+
+.home-content ul {
+    //background-color: yellow;
+    width: 60%;
+    list-style: none;
+    font-size: 2rem; // adjusts icon size
+    animation: fadeInUp 1.5s;
+    margin: 10rem 0 0 0; // space from the greeting
+    padding: 0; // remove space left of the first icon (i.e., GitHub)
+    display: flex; // display: "inline" in li will result in purple mark, make row
+    justify-content: space-evenly;
+}
+
+
+.home-content ul li {
+    //background-color: orange;
+    //padding: 1rem 1rem 1rem 1rem;
+
+    a {
+        cursor: pointer;
+        display: flex;
+        justify-content: center; // justifies text -- aligns horiztonally
+
+        &:hover {
+            svg {
+                opacity: 0; // remove icon
+                transition: all 0.3s ease-out;
+            }
+            &:after {
+                font-size: 20px;
+                font-weight: 500;
+                position: absolute; 
+                transform: translate(0%, 20%); // justifies text -- aligns it vertically
+                content: attr(data-hover); /* work around to have content different for each svg icon */
+            }
+            &.dark-mode:after {
+                color: var(--text-dark);
+            }
+            &.light-mode:after {
+                color: var(--text-light);
+            }
+        } 
+    }
+}   
+
+.icon.dark-mode {
+    color: var(--dark-hover);
+}
+.icon.light-mode {
+    color: var(--text-light);
+}
+
+
+
+.goToAbout {
+    cursor: pointer;
+    margin: 6rem 0 0 0;
+    padding: 1rem;
+    //background: green;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center ;
+    text-align: center; // moves span to the center
+    gap: 1.2rem;
+
+    &.dark-mode:hover {
+        background: var(--bg-text-grey);
+    }
+
+    &.light-mode:hover {
+        background: var(--hover-light-2);
+    }
+
+    &.dark-mode {
+        color: var(--text-dark);
+    }
+
+    &.light-mode {
+        color: var(--text-light);
+    }
+
+
+}
+.goToAbout span {
+    font-weight: 600;
+    text-decoration: underline;
+}
+.caretToAbout {
+    // background-color: gold;
+    @keyframes customBounce {
+        0% {
+        transform: translateY(8px);
+        }
+        50% {
+        transform: translateY(-25px);
+        }
+        100% {
+        transform: translateY(8px);
+        }
+    }
+    animation: customBounce 3s infinite;
+    font-size: 2rem;
+    border-radius: 20px;
+
+    // &:hover {
+    //     background-color: var(--bg-text-grey);
+    // }
+
+    .dark-mode {
+        color: var(--text-dark);
+    }
+
+    .light-mode {
+        color: var(--text-light);
+    }
+
+}
+
+
+
+@media (max-width: 1024px) {
+    .home-content h1 {
+        font-size: 2.2rem;
+        font-weight: 400;
+        margin-top: 5rem;
+    }
+    .home-content ul {
+        font-size: 1.3rem;
+        width: 100%;
+        margin-top: 8rem;
+        justify-content: space-between;
+    }
+    .goToAbout {
+        margin-top: 6rem;
+    }
+    .goToAbout span {
+        font-weight: 500;
+    }
+}
+
+
+@media(min-width: 2560px) {
+    .home-content h1 {
+        width: 50%;
+        font-size: 5rem;
+    }
+    .home-content ul {
+        //width: 50%;
+        font-size: 3rem;
+    }
+
+    .home-content .goToAbout span {
+        font-size: 2rem;
+    }
+    .caretToAbout {
+        font-size: 3rem;
+    }
+}

@@ -1,0 +1,332 @@
+.navClass {
+    width: 100%;
+    height: 9%;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+// for translucent navbar when scrolling
+.navClassColor {
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+  z-index: 2; // so it can blur
+  transition: background-color 0.5s;
+}
+
+.menuNav {
+  position: absolute; // does still work even if .navClass, the parent element of .menuNav, has no relative value for position
+  right: 2em;
+  top: 35%;
+  // background-color: yellow;
+  display: none;
+
+  // style spans in hamburg icon
+  flex-direction: column;
+  justify-content: space-between; // space in between spans
+  width: 2rem;
+  height: 1.2rem;
+}
+// hamburg menu
+nav .menuNav span {
+  width: 100%;
+  height: 0.2rem;
+  border-radius: 0.2rem;
+}
+nav .menuNav span.dark-mode {
+  background-color: var(--text-dark); // has to be background, not just color
+}
+nav .menuNav span.light-mode {
+  background-color: var(--text-light);
+}
+
+.navList {
+  display: flex;
+  align-items: center; // center in nav bar
+  width: 100%; // ensure space-between works
+  justify-content: space-between;
+}
+
+.navListRight {
+  display: flex;
+  flex-direction: row;
+}
+
+li {
+  display: flex;
+  list-style: none;
+}
+
+
+// START for dark mode toggle ------------------------------------------------------------------------
+label {
+  width: 5rem;
+  height: 2rem;
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: #444444;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: 0.5s; // for background color to change
+  overflow: hidden;
+}
+// dot
+label:after {
+  content: '';
+  width: 2rem;
+  height: 2em;
+  position: absolute;
+
+  left: 0rem;
+  border-radius: 20px;
+  background: grey;
+  transition: 0.5s; // for dot going right when unchecked
+
+}
+.navListLeft input {
+  // hides checkbox
+  display: none;
+}
+// if input is checked (becomes light), label/switch changes color
+input:checked + label {
+  background: rgba(var(--bg-light-rgb), 0.5);
+}
+// move dot left
+input:checked + label:after {
+  left: 3rem;
+  background: var(--bg-light);
+}
+label:active:after {
+  transform: scaleX(1.5);
+}
+.sun {
+  position: absolute;
+  z-index: 1;
+  color: white;
+  right: 0.5vw;
+}
+.moon {
+  position: absolute;
+  z-index: 1;
+  color: white;
+  left: 0.5vw;
+}
+input:checked + label .sun {
+  color: black;
+}
+input:checked + label .moon {
+  color: black;
+}
+// END for dark mode toggle ------------------------------------------------------------------------
+
+
+
+.link {
+    cursor: pointer;
+    position: relative;
+
+    margin: 0 2rem;
+    display: flex;
+    align-items: center; // center vertically
+    justify-content: center; // center in the middle
+    height: auto;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: 500;
+    font-family: 'DM Sans';
+    letter-spacing: 1px;
+
+    // underline
+    &:after {
+      content: '';
+      position: absolute;
+      bottom: 0rem;
+      width: 0%;
+      height: 0.1rem;
+      border-radius: 2px;
+      transition: width 1s;
+    }
+
+    &.light-mode:after {
+      background-color: var(--text-dark); // nav is dark
+    }
+
+    &.dark-mode:after {
+      background-color: var(--text-dark);
+    }
+  
+    &.active {
+      &:after {
+        position: absolute;
+        width: 100%;
+      }
+    }
+
+}
+// when clicking on link
+.link:active {
+    color: red;
+}
+.link:hover {
+    //background-color: rgb(150, 150, 150);
+    // transition: background-color 0.3s;
+}
+.link.dark-mode:hover {
+  background-color: var(--bg-text-grey);
+}
+.link.light-mode:hover {
+  background-color: var(--bg-text-grey);
+}
+
+.link.dark-mode {
+  color: var(--text-dark);
+}
+.link.light-mode {
+  color: var(--text-dark); // nav is dark
+}
+
+
+// for Resume only
+.navListRight li .resume-link {
+  text-decoration: none;
+  //background-color: yellow;
+
+  cursor: pointer;
+  margin: 0 2rem;
+  display: flex;
+  align-items: center; // center vertically
+  justify-content: center; // center in the middle
+  height: auto;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: 500;
+  font-family: 'DM Sans';
+  letter-spacing: 1px;
+  
+  color: var(--text-dark);
+
+  &:visited {
+    color: var(--text-dark); // don't want to change to purple
+  }
+
+  &.dark-mode:hover {
+    background-color: var(--dark-hover);
+  }
+  &.light-mode:hover {
+    background-color: var(--bg-text-grey);
+  }
+}
+
+
+
+
+// for small screens -------------------------------------------------------------------------------------------
+@media (max-width: 1024px) {
+  .navClass {
+    box-sizing: border-box;
+    justify-content: center; // moves navList box
+    align-items: center;
+    background-color: transparent; // no nav color
+  }
+  .navClassColor {
+    backdrop-filter: blur(0px); // turn off blur, since only hamburg menu
+  }
+
+  .navList {
+    display: flex;
+    visibility: hidden;
+    box-sizing: border-box;
+    position: fixed;
+    justify-content: center;
+    flex-direction: column;
+    top: 75%;
+    width: 0%;
+    height: 0%;
+    gap: 0.05rem;
+    background: rgb(0,0,0);
+    padding: 0 1rem 1rem 1rem;
+    border: 0.1rem solid white;
+    transition: height 0.5s ease-out;
+  }
+  .navList.light-mode {
+    background: var(--text-light);
+  }
+  .navList.open {
+    visibility: visible;
+    width: 115%;
+    height: 200%;
+  }
+  .navClassColor.open {
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+  }
+
+
+  .menuNav {
+    display: flex; // reappear
+  }
+  .menuNav span {
+    transition: transform 0.5s;
+  }
+  .menuNav .span1.open {
+    transform: translateY(250%) rotate(45deg) ;
+  }
+  .menuNav .span2.open {
+    transform: scale(0);
+  }
+  .menuNav .span3.open {
+    transform: translateY(-250%) rotate(-45deg);
+  }
+
+
+
+  .navListRight {
+    gap: 0.1rem;
+  }
+
+
+  // b/t [toggle] & [home, about, ...]
+  .navList span {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; // toggle + links column
+    backdrop-filter: blur(20px);
+    z-index: 9;
+    //border: 0.1rem solid grey;
+    width: inherit;
+    height: 50%;
+
+  }
+  .navList span li {
+    box-sizing: border-box;
+    width: inherit;
+    height: inherit;
+    justify-content: center; // centers toggle
+    align-items: center;
+
+    //border: 0.1rem solid cyan;
+  }
+  .navList span li .link {
+    box-sizing: border-box;
+    //border: 0.1rem solid yellowgreen;
+    width: inherit;
+    justify-content: center;
+
+
+    &.active {
+      &:after {
+        width: 4rem; // fine on most phone screens
+      }
+    }
+  }
+
+
+}
+
+
+
+
