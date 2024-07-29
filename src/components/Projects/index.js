@@ -1,6 +1,7 @@
 import './index.scss';
 import { FaExternalLinkAlt } from 'react-icons/fa';
 import { useTheme } from '../../ThemeContext';
+import img1 from '../../assets/images/yolov5-bounding-bg.png';
 
 const Projects = () => {
     const {theme} = useTheme();
@@ -17,7 +18,7 @@ const Projects = () => {
                 >
                         <h2>Basketball Highlight Classifier</h2>
                         <span className='img-text'>
-                            <img src='/yolov5-bounding-bg.png' alt='Basketball players in bounding box' ></img>
+                            <img src={img1} alt='Basketball players in bounding box' ></img>
                             <p>This project employs computer vision to classify a short video clip to a statistical category in basketball.
                                 <br /><br />
                                 This is an extracurricular project from my time as a mentee in the UT Dallas Artificial Intelligence
