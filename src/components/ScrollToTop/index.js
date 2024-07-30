@@ -8,7 +8,7 @@ import { useTheme } from '../../ThemeContext';
 
 const ScrollToTop = () => {
     // START dark/light --------------------------------------------
-    const {theme, toggleTheme} = useTheme(); // must be in curly braces, not square brackets! 
+    const {theme} = useTheme(); // must be in curly braces, not square brackets! 
     
     // END dark/light --------------------------------------------
 
