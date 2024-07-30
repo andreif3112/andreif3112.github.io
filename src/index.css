@@ -28,8 +28,8 @@ body {
     sans-serif; */
   font-family: 'DM Sans', 'Montserrat', sans-serif;
   background: black; /* why? */
-  overflow: hidden; /* why? */ /* -- hides scrollbar */
-  display: block; /* why? */
+  /*overflow: hidden;*/ /* why? */ /* -- hides scrollbar */
+  /*display: block;*/ /* why? */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
