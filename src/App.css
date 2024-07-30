@@ -1,0 +1,19 @@
+@import 'animate.css';
+:root {
+  --bg-light: rgb(244, 203, 198);
+  --bg-light-rgb: 244, 203, 198;
+  --bg-light-2: rgb(189, 155, 122);
+  --bg-dark: rgb(25,24,33);
+  --bg-text-grey: rgb(70, 70, 70);
+  --hover-light: #EA9C92;
+  --hover-light-2: rgb(229, 132, 119);
+  --dark-hover: rgb(150, 150, 150);
+  --text-light: rgb(80, 23, 15);
+  --text-light-rgb: 80, 23, 15;
+  --text-dark: #fff;
+}
+
+div {
+  display: flex;
+  flex-direction: column;
+}/*# sourceMappingURL=App.css.map */

@@ -1,0 +1,82 @@
+.about-container {
+  width: 100vw;
+  align-items: center;
+}
+
+.about-container.light-mode {
+  background-color: var(--bg-light);
+}
+
+.about-container.dark-mode {
+  background-color: var(--bg-dark);
+}
+
+.about-content {
+  margin-top: 10%;
+  width: 90%;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.about-content.light-mode {
+  color: var(--text-light);
+}
+.about-content.dark-mode {
+  color: var(--text-dark);
+}
+
+.about-content h1 {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 500;
+  border-radius: 20px;
+}
+
+.about-content p {
+  max-width: 70%;
+  border-radius: 20px;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.tab {
+  display: inline-block;
+  margin-left: 2em;
+}
+
+.about-content p .emph, .about-content p a {
+  text-decoration: underline;
+  border-radius: 20px;
+  padding: 0.2rem;
+  color: inherit;
+}
+.about-content p .emph.dark-mode:hover, .about-content p a.dark-mode:hover {
+  background-color: var(--bg-text-grey);
+}
+.about-content p .emph.light-mode:hover, .about-content p a.light-mode:hover {
+  background-color: var(--hover-light-2);
+}
+.about-content p .emph:visited, .about-content p a:visited {
+  color: inherit;
+}
+
+@media (max-width: 1024px) {
+  .about-content h1 {
+    font-size: 2rem;
+  }
+  .about-content p {
+    font-size: 1rem;
+    border-radius: 0;
+    max-width: 80%;
+  }
+}
+@media (min-width: 2560px) {
+  .about-content h1 {
+    font-size: 4rem;
+  }
+  .about-content p {
+    font-size: 2rem;
+    max-width: 50%;
+  }
+}/*# sourceMappingURL=index.css.map */

@@ -1,0 +1,316 @@
+.navClass {
+  width: 100%;
+  position: fixed;
+  display: flex;
+  background-color: rgba(0, 0, 0, 0.5);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  z-index: 2;
+}
+
+.menuNav {
+  position: absolute;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 2rem;
+  height: 1.2rem;
+}
+
+nav .menuNav span {
+  width: 100%;
+  height: 0.2rem;
+  border-radius: 0.2rem;
+}
+
+nav .menuNav span.dark-mode {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+nav .menuNav span.light-mode {
+  background-color: rgba(var(--text-light-rgb), 0.5);
+}
+
+.navList {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.navListRight {
+  display: flex;
+  flex-direction: row;
+}
+
+li {
+  display: flex;
+  list-style: none;
+}
+
+.navListLeft li label {
+  width: 5rem;
+  height: 2rem;
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: #444444;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: 0.5s;
+  overflow: hidden;
+}
+.navListLeft li label:after {
+  content: "";
+  width: 2rem;
+  height: 2em;
+  position: absolute;
+  left: 0rem;
+  border-radius: 20px;
+  background: grey;
+  transition: 0.5s;
+}
+
+.navListLeft li input {
+  display: none;
+}
+
+input:checked + label {
+  background: rgba(var(--bg-light-rgb), 0.5);
+}
+
+input:checked + label:after {
+  left: 3rem;
+  background: var(--bg-light);
+}
+
+.navListLeft label:active:after {
+  transform: scaleX(1.5);
+}
+
+.sun {
+  position: absolute;
+  z-index: 1;
+  color: white;
+  right: 0.5rem;
+}
+
+.moon {
+  position: absolute;
+  z-index: 1;
+  color: white;
+  left: 0.5rem;
+}
+
+input:checked + label .sun {
+  color: black;
+}
+
+input:checked + label .moon {
+  color: black;
+}
+
+.link {
+  cursor: pointer;
+  position: relative;
+  margin: 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: 500;
+  font-family: "DM Sans";
+  letter-spacing: 1px;
+}
+.link:after {
+  content: "";
+  position: absolute;
+  bottom: 0rem;
+  width: 0%;
+  height: 0.1rem;
+  border-radius: 2px;
+  transition: width 1s;
+}
+.link.light-mode:after {
+  background-color: var(--text-dark);
+}
+.link.dark-mode:after {
+  background-color: var(--text-dark);
+}
+.link.active:after {
+  position: absolute;
+  width: 100%;
+}
+
+.link:active {
+  color: red;
+}
+
+.link.dark-mode:hover {
+  background-color: var(--bg-text-grey);
+}
+
+.link.light-mode:hover {
+  background-color: var(--bg-text-grey);
+}
+
+.link.dark-mode {
+  color: var(--text-dark);
+}
+
+.link.light-mode {
+  color: var(--text-dark);
+}
+
+.navListRight li .resume-link {
+  text-decoration: none;
+  cursor: pointer;
+  margin: 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: 500;
+  font-family: "DM Sans";
+  letter-spacing: 1px;
+  color: var(--text-dark);
+}
+.navListRight li .resume-link:visited {
+  color: var(--text-dark);
+}
+.navListRight li .resume-link:hover {
+  background-color: var(--bg-text-grey);
+}
+
+@media (max-width: 1024px) {
+  .navClass {
+    background-color: transparent;
+    -webkit-backdrop-filter: blur(0px);
+            backdrop-filter: blur(0px);
+    transition: background-color 0.4s;
+  }
+  .navClass.open {
+    background-color: rgba(0, 0, 0, 0.5);
+    -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+  }
+  .menuNav {
+    display: flex;
+    background-color: transparent;
+    margin-top: 2rem;
+    right: 5vw;
+  }
+  .menuNav span {
+    transition: 0.4s;
+  }
+  .menuNav .span1.open {
+    transform: translateY(250%) rotate(45deg);
+  }
+  .menuNav .span1.open.dark-mode {
+    background-color: white;
+  }
+  .menuNav .span1.open.light-mode {
+    background-color: var(--text-light);
+  }
+  .menuNav .span2.open {
+    transform: scale(0);
+  }
+  .menuNav .span3.open {
+    transform: translateY(-250%) rotate(-45deg);
+  }
+  .menuNav .span3.open.dark-mode {
+    background-color: white;
+  }
+  .menuNav .span3.open.light-mode {
+    background-color: var(--text-light);
+  }
+  .navList {
+    display: none;
+    padding: 0;
+    flex-direction: column;
+    align-items: start;
+    margin-top: 5rem;
+    margin-bottom: 0%;
+    width: 0%;
+    height: 0%;
+    border-top: 2px solid;
+    border-bottom: 2px solid;
+  }
+  .navList.open {
+    width: 100%;
+    height: 300%;
+    display: flex;
+    animation: fadeIn 0.4s;
+  }
+  .navList.dark-mode {
+    border-color: var(--text-dark);
+    background-color: black;
+  }
+  .navList.light-mode {
+    border-color: var(--text-dark);
+    background-color: var(--text-light);
+  }
+  .navList span {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .navListLeft {
+    padding: 1rem 0;
+  }
+  .navListRight {
+    background-color: blue;
+    flex-direction: column;
+  }
+  .navListRight .link, .navListRight li .resume-link {
+    background-color: purple;
+    padding: 0.4rem 100vw;
+  }
+  .navListRight .link.active:after, .navListRight li .resume-link.active:after {
+    width: 4rem;
+  }
+  .navListRight .link.dark-mode, .navListRight li .resume-link.dark-mode {
+    background-color: black;
+  }
+  .navListRight .link.light-mode, .navListRight li .resume-link.light-mode {
+    background-color: var(--text-light);
+  }
+}
+@media (min-width: 2560px) {
+  .navListLeft li label {
+    width: 7.5rem;
+    height: 3rem;
+    border-radius: 30px;
+  }
+  .navListLeft li label:after {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 30px;
+  }
+  input:checked + label:after {
+    left: 4.5rem;
+  }
+  .sun, .moon {
+    font-size: 1.5rem;
+  }
+  .sun {
+    right: 0.75rem;
+  }
+  .moon {
+    left: 0.75rem;
+  }
+  .link {
+    font-size: 1.5rem;
+  }
+  .link:after {
+    height: 0.15rem;
+  }
+  .navListRight li .resume-link {
+    font-size: 1.5rem;
+  }
+}/*# sourceMappingURL=index.css.map */
