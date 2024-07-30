@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/static/css/main.e8a80ecd.css",
+    "main.js": "/static/js/main.5ad3c0f7.js",
+    "static/js/453.8ad5a992.chunk.js": "/static/js/453.8ad5a992.chunk.js",
+    "static/media/yolov5-bounding-bg.png": "/static/media/yolov5-bounding-bg.266dd9af7ca317b6828c.png",
+    "index.html": "/index.html",
+    "main.e8a80ecd.css.map": "/static/css/main.e8a80ecd.css.map",
+    "main.5ad3c0f7.js.map": "/static/js/main.5ad3c0f7.js.map",
+    "453.8ad5a992.chunk.js.map": "/static/js/453.8ad5a992.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e8a80ecd.css",
+    "static/js/main.5ad3c0f7.js"
+  ]
+}
