@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { LuMail } from 'react-icons/lu';
 import { useTheme } from '../../ThemeContext';
+import { FaRegCopyright } from 'react-icons/fa';
 
 const Footer = (() => {
 
@@ -12,7 +13,7 @@ const Footer = (() => {
     return (
         <footer className={`footerColor ${theme}-mode`}>
             <div className='footer-content'>
-                <h2>Thank you for taking the time to view my portfolio!</h2>
+                <h1>Thank you for viewing my portfolio!</h1>
                 <ul>
                     <li>
                         <a href="https://github.com/andreif3112" 
@@ -44,6 +45,10 @@ const Footer = (() => {
                         </a>
                     </li>
                 </ul>
+                <p><FaRegCopyright className='copyright-icon'/>
+                    &nbsp;Copyright 2025 Andrei Favorito. Some images licensed via Pixabay.<br/> 
+                    Hosted by GitHub Pages. Last updated July 2025.
+                </p>
             </div>
         </footer>
     );

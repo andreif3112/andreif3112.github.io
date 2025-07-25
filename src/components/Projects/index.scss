@@ -6,16 +6,15 @@
     align-items: center; // align cross axis
 
     &.dark-mode {
-        background-color: var(--bg-dark);
+        background-color: var(--bg-dark-mode);
     }
     &.light-mode {
-        background-color: var(--bg-light);
+        background-color: var(--bg-light-mode);
     }
-    
 }
 
 .projects-content {
-    //background-color: red;
+    // background-color: red;
     margin-top: 10%; // instead of justify-content in parent element/class, give a margin.
     padding-bottom: 1rem; // so we can see shadow
     width: 80%;
@@ -24,174 +23,194 @@
     flex-direction: column;
     align-items: center;
 
-    // for h2
+    // for project section title
     &.dark-mode {
-        color: var(--text-dark);
+        color: var(--text-dark-mode);
     }
     &.light-mode {
-        color: var(--text-light);
+        color: var(--text-light-mode);
     }
-}
 
-
-// span
-.projects-content .img-text {
-    display: flex; // for row direction default
-    gap: 1rem;
-}
-
-.projects-content h1 {
-    font-size: 2rem;
-    font-weight: 500;
-}
-
-.projects-content a h2 {
-    font-size: 1.6rem;
-    font-weight: 500;
-}
-
-.projects-content h1, .projects-content h2 {
-    text-align: center;
-}
-
-
-// anchor element
-.tile {
-     //background-color: yellow;
-    max-width: 70%;
-    display: flex;
-    flex-direction: column;
-    border: 2px solid;
-    border-radius: 20px;
-    padding: 0 1rem 1rem;
-    position: relative; // for projects link
-    text-decoration: none;
-
-    transition: 0.3s; // for hover
-
-    & span img {
-        filter: blur(2px); 
+    // span
+    & .tile .img-text {
+        display: flex; // for row direction default
+    }
+    & h1 {
+        font-size: 2rem;
+        font-weight: 500;
+    }
+    & h1, h2 {
+        text-align: center;
+    }
+    // anchor element
+    & .tile {
+        // background-color: yellow;
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        border: 2px solid;
         border-radius: 20px;
-        transition: 0.3s; // for hover
-    }
-
-    &.dark-mode {
-        border-color: var(--bg-text-grey);
-    }
-    &.light-mode {
-        border-color: var(--hover-light);
-    }
-    .projects-link-icon {
-        transition: 0.3s; // for hover
-    }
-    .projects-link-icon.dark-mode {
-        color: var(--text-dark);
-    }
-    .projects-link-icon.light-mode {
-        color: var(--text-light);
-    }
-
-    &:hover {
-        & span img {
-            filter: blur(0.5px);
+        padding: 0 1rem 1rem;
+        text-decoration: none;
+        margin-bottom: 2rem; // space b/t tiles
+        transition: 0.3s; // for hover over tile border
+        &.dark-mode {
+            border-color: var(--dark-mode-hover);
+        }
+        &.light-mode {
+            border-color: var(--light-mode-hover);
+            // both the projects-link and icon are already same color, so don't need to include .projects-link-icon
+            .projects-link {
+                color: var(--light-mode-hover);
+            }
+        }
+        .projects-link-icon, .projects-link {
+            transition: 0.3s; // for hover over link and link icon
+        }
+        .projects-link-icon.dark-mode {
+            color: var(--dark-mode-hover);
+        }
+        .projects-link-icon.light-mode {
+            color: var(--light-mode-hover);
+        }
+        &.dark-mode:hover {
+            border-color: var(--text-dark-mode) ;
+            .projects-link-icon {
+                color: var(--text-dark-mode);
+            }
+            .projects-link {
+                color: var(--text-dark-mode);
+            }
+        }
+        &.light-mode:hover {
+            border-color: var(--text-light-mode) ;
+            .projects-link-icon, .projects-link {
+                color: var(--text-light-mode);
+            }
+        }
+        // light up project name & p
+        &.dark-mode {
+            color: var(--text-dark-mode);
+        }
+        &.light-mode {
+            color: var(--text-light-mode);
+        }
+        & .left {
+            //background-color: blue;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50%;
+            & img {
+                //background-color: yellow;
+                height: 8rem;
+                border-radius: 1rem;
+            }
+        }
+        & .right {
+            width: 50%;
+            display: flex;
+            justify-content: center; // cross axis
+            //background-color: yellowgreen;
+            & p {
+            //padding: 0 1rem 2rem 1rem;
+                font-size: 1rem;
+                font-weight: 500;
+                text-align: center;
+            }
+        }
+        & h1 {
+            font-size: 1.5rem;
+            // background-color: gray;
+        }
+        & .projects-link {
+            // no text decoration!
+            display: flex;
+            align-self: end;
+            color: var(--dark-mode-hover);
+            //background-color: red;
+            & .projects-link-icon {
+                font-size: 0.9rem;
+                height: 1.2rem;
+                //background-color: cadetblue;
+            }   
         }
     }
-
-    &.dark-mode:hover {
-        border-color: var(--text-dark) ;
-
-        .projects-link-icon {
-            color: var(--text-dark);
-        }
-    }
-    &.light-mode:hover {
-        border-color: var(--text-light) ;
-
-        .projects-link-icon {
-            color: var(--text-light);
-        }
-    }
-
-    // light up h2 & p
-    &.dark-mode {
-        color: var(--text-dark);
-    }
-    &.light-mode {
-        color: var(--text-light);
-    }
 }
 
-.tile img {
-    filter: blur(2px);
-    width: 50%;
-}
-
-.tile p {
-    //background-color: yellowgreen;
-    padding: 0 1rem 2rem 1rem;
-    width: 50%;
-    font-size: 1rem;
-    font-weight: 500;
-}
-
-.tile .projects-link {
-    text-decoration: underline;
-    position: absolute;
-    right: 3%;
-    bottom: 3%;
-}
 
 
 
 
 @media (max-width: 1024px) {
-    .projects-content .img-text {
+    .projects-content .tile .img-text {
         flex-direction: column;
-        width: 100%;
-        align-items: center;
-        // background-color: yellow;
-        //padding: 0;
+        //background-color: yellow;
+        & .left, .right {
+            width: 100%;            
+        }
+        & .left img {
+            width: 4rem; // give as rem! Do not do percentage (account different screen sizes)
+            //background-color: green;
+        }
+        & .right p {
+            //background-color: red;
+        }
+        & .left .airline-img {
+            //background-color: green;
+            width: 8rem;
+            height: 5rem; // just set height so that airplane image is not wonky/thick
+        }
+        & .left .representative-img {
+            width: 8rem;
+            height: 8rem; 
+        }
     }
-    .tile img, .tile p {
-        width: 100%;
+    .projects-content .tile .projects-link-icon.dark-mode {
+        color: var(--text-dark-mode);
     }
-    .tile img {
-        filter: blur(1px);
-    }
-    .tile .projects-link-icon.dark-mode {
-        color: var(--text-dark);
-    }
-    .tile .projects-link-icon.light-mode {
-        color: var(--text-light);
+    .projects-content .tile .projects-link-icon.light-mode {
+        color: var(--text-light-mode);
     }
 }
 
+
+
 @media (min-width: 2560px) {
-    .projects-content h1 {
-        font-size: 4rem;
-    }
-
-    .projects-content a h2 {
-        font-size: 2.5rem;
-    }
-
-    .projects-content a p {
-        font-size: 2rem;
-    }
-
-    .projects-content a img {
-        filter: blur(5px);
-    }
-
-    .projects-content .tile {
-        border: 4px solid;
-
-        & .projects-link {
-            font-size: 2.3rem;
-        }
-    }
-
     .projects-content {
-        padding-bottom: 20rem;
+        // project section title
+        & h1 {
+            font-size: 4rem;
+        }
+        .tile {
+            //background-color: cyan;
+            border: 4px solid;
+            width: 40%; // make width smaller
+
+            // project name
+            & h1 {
+                font-size: 2.5rem;
+            }
+            & .img-text .right p {
+                font-size: 2rem;
+                //background-color: plum;
+            }
+            & .img-text .left {
+                width: 50%;
+                //background-color: red;
+                & .classifier-img {
+                    //background-color: green;
+                    height: 80%;
+                    width: 20%;
+                }
+                & .airline-img {
+                    height: 70%;
+                    width: 70%;
+                }
+            }
+            & .projects-link {
+                font-size: 2.3rem;
+            }
+        }
     }
 }

@@ -11,107 +11,109 @@
 
 
 .menuNav {
-position: absolute;
-// background-color: yellow;
-display: none;
+  position: absolute;
+  // background-color: yellow;
+  display: none;
 
-// style spans in hamburg icon
-flex-direction: column;
-justify-content: space-between; // space in between spans
-width: 2rem;
-height: 1.2rem;
+  // style spans in hamburg icon
+  flex-direction: column;
+  justify-content: space-between; // space in between spans
+  width: 2rem;
+  height: 1.2rem;
 }
 // hamburg menu
 nav .menuNav span {
-width: 100%;
-height: 0.2rem;
-border-radius: 0.2rem;
-}
-nav .menuNav span.dark-mode {
-background-color: rgba(white, 0.5); // has to be background, not just color
-}
-nav .menuNav span.light-mode {
-background-color: rgba(var(--text-light-rgb), 0.5);
-}
+  width: 100%;
+  height: 0.2rem;
+  border-radius: 0.2rem;
 
-.navList {
-display: flex;
-align-items: center; // center in nav bar
-width: 100%; // ensure space-between works
-justify-content: space-between;
-}
-
-.navListRight {
-display: flex;
-flex-direction: row;
-}
-
-li {
-display: flex;
-list-style: none;
-}
-
-
-// START for dark mode toggle ------------------------------------------------------------------------
-.navListLeft li label {
-width: 5rem;
-height: 2rem;
-position: relative;
-display: flex;
-align-items: center;
-background: #444444;
-border-radius: 20px;
-cursor: pointer;
-transition: 0.5s; // for background color to change
-overflow: hidden;
-
-  // dot
-  &:after {
-    content: '';
-    width: 2rem;
-    height: 2em;
-    position: absolute;
-    
-    left: 0rem;
-    border-radius: 20px;
-    background: grey;
-    transition: 0.5s; // for dot going right when unchecked
+  &.dark-mode {
+    background-color: rgba(white, 0.5); // has to be background, not just color
+  }
+  &.light-mode { 
+    background-color: rgba(var(--text-light-rgb), 0.5);
   }
 }
 
-.navListLeft li input {
-// hides checkbox
-display: none;
+
+
+li {
+  display: flex;
+  list-style: none;
 }
-// if input is checked (becomes light), label/switch changes color
-input:checked + label {
-background: rgba(var(--bg-light-rgb), 0.5);
-}
-// move dot left
-input:checked + label:after {
-left: 3rem;
-background: var(--bg-light);
-}
-.navListLeft label:active:after {
-transform: scaleX(1.5);
-}
-.sun {
-position: absolute;
-z-index: 1;
-color: white;
-right: 0.5rem;
-}
-.moon {
-position: absolute;
-z-index: 1;
-color: white;
-left: 0.5rem;
-}
-input:checked + label .sun {
-color: black;
-}
-input:checked + label .moon {
-color: black;
+
+
+
+.navList {
+  display: flex;
+  align-items: center; // center in nav bar
+  width: 100%; // ensure space-between works
+  justify-content: space-between;
+
+  & .navListRight {
+    display: flex;
+    flex-direction: row;
+  }
+  // START for dark mode toggle ------------------------------------------------------------------------
+  & .navListLeft li label {
+    width: 5rem;
+    height: 2rem;
+    position: relative;
+    display: flex;
+    align-items: center;
+    background: #444444;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.5s; // for background color to change
+    overflow: hidden;
+
+    // dot
+    &:after {
+      content: '';
+      width: 2rem;
+      height: 2em;
+      position: absolute;
+      
+      left: 0rem;
+      border-radius: 20px;
+      background: grey;
+      transition: 0.5s; // for dot going right when unchecked
+    }
+  }
+  & .navListLeft li input {
+    // hides checkbox
+    display: none;
+  }
+  // if input is checked (becomes light), label/switch changes color
+  input:checked + label {
+    background: rgba(var(--bg-light-rgb), 0.5);
+  }
+  // move dot left
+  input:checked + label:after {
+    left: 3rem;
+    background: var(--bg-light-mode);
+  }
+  .navListLeft label:active:after {
+    transform: scaleX(1.5);
+  }
+  .sun {
+    position: absolute;
+    z-index: 1;
+    color: white;
+    right: 0.5rem;
+  }
+  .moon {
+    position: absolute;
+    z-index: 1;
+    color: white;
+    left: 0.5rem;
+  }
+  input:checked + label .sun {
+    color: black;
+  }
+  input:checked + label .moon {
+    color: black;
+  }
 }
 // END for dark mode toggle ------------------------------------------------------------------------
 
@@ -125,7 +127,6 @@ color: black;
   display: flex;
   align-items: center; // center vertically
   justify-content: center; // center in the middle
-  height: auto;
   border-radius: 4px;
   font-size: 1rem;
   font-weight: 500;
@@ -143,14 +144,17 @@ color: black;
     transition: width 1s;
   }
 
-  &.light-mode:after {
-    background-color: var(--text-dark); // nav is dark
-  }
+  // &.light-mode:after {
+  //   background-color: var(--text-dark-mode); // nav is dark
+  // }
 
-  &.dark-mode:after {
-    background-color: var(--text-dark);
-  }
+  // &.dark-mode:after {
+  //   background-color: var(--text-dark-mode);
+  // }
 
+  &:after {
+    background-color: var(--text-dark-mode);
+  }
   &.active {
     &:after {
       position: absolute;
@@ -158,55 +162,16 @@ color: black;
     }
   }
 
-}
-// when clicking on link
-.link:active {
-  color: red;
-}
+  // when clicking on link
+  // &:active {
+  //   //color: purple;
+  // }
 
-.link.dark-mode:hover {
-background-color: var(--bg-text-grey);
+  &:hover {
+    background-color: var(--dark-mode-hover);
+  }
+  color: var(--text-dark-mode); 
 }
-.link.light-mode:hover {
-background-color: var(--bg-text-grey);
-}
-
-.link.dark-mode {
-color: var(--text-dark);
-}
-.link.light-mode {
-color: var(--text-dark); // nav is dark
-}
-
-
-// for Resume only
-.navListRight li .resume-link {
-text-decoration: none;
-//background-color: yellow;
-
-cursor: pointer;
-margin: 0 2rem;
-display: flex;
-align-items: center; // center vertically
-justify-content: center; // center in the middle
-height: auto;
-border-radius: 4px;
-font-size: 1rem;
-font-weight: 500;
-font-family: 'DM Sans';
-letter-spacing: 1px;
-
-color: var(--text-dark);
-
-&:visited {
-  color: var(--text-dark); // don't want to change to purple
-}
-
-&:hover {
-  background-color: var(--bg-text-grey);
-}
-}
-
 
 
 
@@ -231,49 +196,44 @@ color: var(--text-dark);
     background-color: transparent;
     //top: 2.5; // rem too small, use viewport, don't use % b/c '%' of navbar
     margin-top: 2rem; // hamburg will be in center of opacity nav
-    right: 5vw;
+    left: 5vw; // changed to left from right side
 
     & span {
       transition: 0.4s;
     }
     & .span1.open {
       transform: translateY(250%) rotate(45deg);
-
       &.dark-mode {
         background-color: white;
       }
       &.light-mode {
-        background-color: var(--text-light);
+        background-color: var(--text-dark-mode);
       }
     }
     & .span2.open {
       transform: scale(0);
-
     }
     & .span3.open {
       transform: translateY(-250%) rotate(-45deg);
-
       &.dark-mode {
         background-color: white;
       }
       &.light-mode {
-        background-color: var(--text-light);
+        background-color: var(--text-dark-mode);
       }
     }
   }
 
   .navList {
-    //background-color: yellow;
+    background-color: cornflowerblue;
+    // border-color: var(--text-dark-mode);
+    // background-color: var(--text-light-mode);
 
     display: none;
     padding: 0; // remove left space in list
     flex-direction: column;
-    align-items: start;
     margin-top: 5rem; // 20% from the top of navClass
     margin-bottom: 0%; // make sure navList does not extend past navClass bg
-    width: 0%;
-    height: 0%;
-
     border-top: 2px solid;
     border-bottom: 2px solid;
 
@@ -283,53 +243,47 @@ color: var(--text-dark);
       display: flex;
       animation: fadeIn 0.4s;
     }
-
-    // change border color
     &.dark-mode {
-      border-color: var(--text-dark);
-      background-color: black;
+      border-color: var(--text-dark-mode);
+      background-color: #0d160b;
     }
     &.light-mode {
-      border-color: var(--text-dark);
-      background-color: var(--text-light);
+      border-color: var(--text-dark-mode);
+      background-color: var(--text-light-mode);
+    }
+    & span {
+      //background-color: green;
+      width: 100%;
+      display: flex;
+      justify-content: center; // aligns navListLeft
+      align-items: center; // aligns navListRight
+    }
+    & .navListLeft {
+      padding: 1rem 0;
+    }
+    & .navListRight {
+      //background-color: blue;
+      flex-direction: column;
+
+      & li  {
+        width: 120%; // enough to cover whole width of navList
+        //background-color: green;
+        & .link {
+          padding: 0.5rem 0;
+          //background-color: red;
+          width: 100%;
+          &:after {
+            width: 0%;
+          }
+          &.active {
+            &:after {
+              width: 4rem;// keep as rem, not %
+            }
+          }
+        }
+      }
     }
   }
-
-  .navList span {
-    //background-color: green;
-    width: 100%;
-    display: flex;
-    justify-content: center; // aligns navListLeft
-    align-items: center; // aligns navListRight
-
-  }
-
-  .navListLeft {
-    //min-height: 3.5rem;
-    padding: 1rem 0;
-  }
-
-  .navListRight {
-    background-color: blue;
-    flex-direction: column;
-  }
-
-  .navListRight .link, .navListRight li .resume-link {
-    background-color: purple;
-    padding: 0.4rem 100vw; // link extends across
- 
-    &.active:after {
-      width: 4rem; // change underline, don't want to span across viewport width
-    }
-
-    &.dark-mode {
-      background-color: black;
-    }
-    &.light-mode {
-      background-color: var(--text-light);
-    }
-  }
-
 }
 
 @media (min-width: 2560px) {
@@ -349,11 +303,12 @@ color: var(--text-dark);
   // move dot left
   input:checked + label:after {
     left: 4.5rem;
+    left: 7rem;
   }
 
   // increase size of sun and moon icons
   .sun, .moon {
-    font-size: 1.5rem;
+    //font-size: 1.5rem; // keep as 1rem?
   }
   .sun {
     right: 0.75rem; // 1.5x the original -- keep icon centered in dot
@@ -365,7 +320,7 @@ color: var(--text-dark);
 
   .link {
     font-size: 1.5rem;
-
+    
     &:after {
       height: 0.15rem;
     }

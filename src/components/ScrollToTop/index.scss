@@ -15,19 +15,20 @@
 }
 
 .scrollTop.dark-mode {
-    color: var(--text-dark);
+    color: var(--text-dark-mode);
 }
 .scrollTop.light-mode {
-    color: var(--text-light);
+    color: var(--text-light-mode);
 }
-
 
 .scrollTop.dark-mode:hover {
-    background-color: var(--dark-hover);
+    background-color: var(--dark-mode-hover);
 }
 .scrollTop.light-mode:hover {
-    background-color: var(--hover-light-2);
+    background-color: var(--light-mode-hover);
 }
+
+
 
 @media (min-width: 2560px) {
     .scrollTop {

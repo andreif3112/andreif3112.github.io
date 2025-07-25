@@ -83,16 +83,6 @@ const Nav = () => {
                             Projects
                         </Link>
                     </li>
-                    <li>
-                        <a 
-                            href="https://drive.google.com/file/d/1MxKosNEIdOk4zerX4gnuQZDOpqO4OSTh/view?usp=sharing"
-                            target="_blank"
-                            rel="noreferrer" 
-                            className={`resume-link ${theme}-mode`}
-                        >
-                            Resume
-                        </a>
-                    </li>
                 </span>
             </ul>
         </nav>

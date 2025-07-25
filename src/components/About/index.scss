@@ -1,30 +1,28 @@
 .about-container {
     //background-color: blue; // blue
     width: 100vw;
-    //min-height: 80vh;
-    //justify-content: center;
     align-items: center;
 }
 .about-container.light-mode {
-    background-color: var(--bg-light);
+    background-color: var(--bg-light-mode);
 }
 .about-container.dark-mode {
-    background-color: var(--bg-dark);
+    background-color: var(--bg-dark-mode);
 }
 
 .about-content {
     //background-color: grey;
     margin-top: 10%;
-    width: 90%;
+    width: 80%;
     border-radius: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
     &.light-mode {
-        color: var(--text-light);
+        color: var(--text-light-mode);
     }
     &.dark-mode {
-        color: var(--text-dark);
+        color: var(--text-dark-mode);
     }
 }
 
@@ -43,6 +41,10 @@
     border-radius: 20px;
     font-size: 1.2rem;
     font-weight: 500;
+
+    &.dark-mode {
+        font-weight: 400;
+    }
 }
 
 .tab {
@@ -57,13 +59,11 @@
     color: inherit;
 
     &.dark-mode:hover {
-        background-color: var(--bg-text-grey);
+        background-color: var(--dark-mode-hover);
     }
-
     &.light-mode:hover {
-        background-color: var(--hover-light-2);
+        background-color: var(--light-mode-hover);
     }
-
     &:visited {
         color: inherit; // don't want purple or blue text -- less readable!
     }
@@ -86,7 +86,6 @@
     .about-content h1 {
         font-size: 4rem;
     }
-
     .about-content p {
         font-size: 2rem;
         //border-radius: 0;
