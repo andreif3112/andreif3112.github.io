@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/static/css/main.00441f8e.css",
-    "main.js": "/static/js/main.c7f80fa4.js",
+    "main.css": "/static/css/main.667f6b08.css",
+    "main.js": "/static/js/main.f56e9352.js",
     "static/js/453.8ad5a992.chunk.js": "/static/js/453.8ad5a992.chunk.js",
     "static/media/ecommerce-3000.png": "/static/media/ecommerce-3000.6e942016010cfe1127eb.png",
     "static/media/basketball-147657_1280.jpg": "/static/media/basketball-147657_1280.082cb34d10398bf2bbb1.jpg",
     "static/media/airline-plane.png": "/static/media/airline-plane.8ba9f0db8bdc9d048d4f.png",
     "index.html": "/index.html",
-    "main.00441f8e.css.map": "/static/css/main.00441f8e.css.map",
-    "main.c7f80fa4.js.map": "/static/js/main.c7f80fa4.js.map",
+    "main.667f6b08.css.map": "/static/css/main.667f6b08.css.map",
+    "main.f56e9352.js.map": "/static/js/main.f56e9352.js.map",
     "453.8ad5a992.chunk.js.map": "/static/js/453.8ad5a992.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.00441f8e.css",
-    "static/js/main.c7f80fa4.js"
+    "static/css/main.667f6b08.css",
+    "static/js/main.f56e9352.js"
   ]
 }
