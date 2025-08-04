@@ -26,13 +26,12 @@ const About = () => {
                     <p className={`${theme}-mode`}>
                         Welcome to my portfolio! My name is Andrei Favorito. <br /><br />
 
-                        I am an aspiring software engineer who graduated from <a href="https://www.utdallas.edu/"
-                        className={`emph ${theme}-mode`}>UT Dallas</a> in May 2025, 
+                        I am an software engineer who graduated from <a href="https://www.utdallas.edu/"
+                        className={`emph ${theme}-mode`}>UT Dallas</a>, 
                         and I am currently seeking full-time opportunities to grow and learn in the tech industry. <br /><br />
 
-                        My background includes UI/UX design and frontend web development.  
-                        While I am still exploring where I want to focus my career,
-                        I am curious about new challenges and want to continue to expand my skills.<br/><br/>
+                        My background includes UI/UX design and frontend web development,
+                        and I am open to new challenges and want to continue to expand my skillset.<br/><br/>
 
                         This portfolio showcases my work across various domains (AI/ML, web development, ...). 
                         Feel free to check out some of my work <Link to="projects" smooth={true} className={`emph ${theme}-mode`}>below</Link>,

@@ -230,7 +230,7 @@ li {
     // background-color: var(--text-light-mode);
 
     display: none;
-    padding: 0; // remove left space in list
+    padding: 0.5rem 0; // remove left space in list, 0.5rem to make space between bottom of menuNav and Project li
     flex-direction: column;
     margin-top: 5rem; // 20% from the top of navClass
     margin-bottom: 0%; // make sure navList does not extend past navClass bg
@@ -279,6 +279,10 @@ li {
             &:after {
               width: 4rem;// keep as rem, not %
             }
+          }
+          &:active {
+            color: purple;
+            background-color: purple;
           }
         }
       }

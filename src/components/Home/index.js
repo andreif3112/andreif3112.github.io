@@ -23,6 +23,7 @@ const Home = () => {
                         <li>
                             <a href="https://github.com/andreif3112" 
                                 alt="GitHub"
+                                target="_blank"
                                 className = {`${theme}-mode`}
                                 data-hover="GitHub"
                                 rel="noreferrer" > 
@@ -32,6 +33,7 @@ const Home = () => {
                         <li>
                             <a href="https://www.linkedin.com/in/andrei-favorito/" 
                                 alt="LinkedIn"
+                                target="_blank"
                                 className = {`${theme}-mode`}
                                 data-hover="LinkedIn"
                                 rel="noreferrer"> 
