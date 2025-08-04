@@ -11,6 +11,8 @@ Major updates are whole numbers (e.g., v2.0, v3.0...); minor updates are decimal
   - Created .gitattributes to overwrite GitHub's linguistic library language autodetection of majority "HTML" with the variety of languages used for this project
 - v2.0 (7/25/25):
   - Removed "Resume" in Navbar, made UI changes (font size, color vars), added more projects (Airline Rewards System and AI Service Agent), polished code...
+- v2.1 (8/4/25):
+  - Edited About, set target="_blank", added padding for navList media query
 
 ## For Future Versions:
 - [ ] Keep dark/light mode state when user goes back after clicking "target = _self" links
